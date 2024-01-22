@@ -125,20 +125,17 @@ nav {
 header {
     position: relative;
     padding-top: 2rem;
-    /* Puedes ajustar este valor según sea necesario */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 10rem;
     margin-bottom: 10%;
-    min-height: 75vh;
+    min-height: 80vh;
 }
 
-header .content h4 {
-    margin-bottom: 1rem;
-    color: #ccc;
-    font-size: 1rem;
-    font-weight: 600;
+
+header .content {
+    flex: 1;
+    /* Ocupa todo el espacio disponible */
 }
 
 header .content h1 {
@@ -154,21 +151,44 @@ header .content h1 span {
     -webkit-text-stroke: 1px #fff;
 }
 
+header .content h1 {
+    color: #333333;
+    margin-bottom: 1rem;
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 4rem;
+}
+
 header .content p {
     margin-bottom: 2rem;
-    color: 333333;
+    color: #333333;
+}
+
+header .content button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #0984E3;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+header .content button:hover {
+    background-color: #333333;
 }
 
 header .image {
-    position: relative;
+    flex: 1;
+    /* Ocupa todo el espacio disponible */
 }
-
-
 
 header .image img {
-    max-width: 600px;
-    margin: auto;
+    max-width: 100%;
+    /* Ajusta el ancho máximo de la imagen */
 }
+
 
 section .header {
     margin-bottom: 1rem;
@@ -323,42 +343,114 @@ footer .column>a:hover {
     text-align: center;
 }
 
+.mobile-menu {
+    display: none;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.menu-icon span {
+    height: 3px;
+    width: 25px;
+    background-color: #333;
+    margin: 5px 0;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    display: none;
+}
+
+.mobile-nav-links li {
+    text-align: center;
+}
+
+@media (max-width: 899px) {
+    .contact-column {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .mobile-nav-links {
+        list-style: none;
+        display: none;
+        flex-direction: column;
+        /* Añade esta línea para mostrar los enlaces en columna */
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .mobile-nav-links li {
+        margin: 10px 0;
+    }
+
+}
+
 @media (width < 900px) {
     .nav-links {
         display: none;
     }
 
-    header {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    header .image {
-        grid-area: 1/1/2/2;
-    }
-
-    .features {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .pricing {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    footer {
-        grid-template-columns: 1fr 200px;
+    .contact-column {
+        justify-self: end;
     }
 }
 
-@media (width < 600px) {
-    header .image::before {
+header {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+header .image {
+    grid-area: 1/1/2/2;
+}
+
+.features {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.pricing {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+footer {
+    grid-template-columns: 1fr 150px;
+}
+
+
+@media (max-width: 600px) {
+
+    .nav-logo {
+        max-width: 110px;
+    }
+
+    header {
+        grid-area: 1/1/2/2;
+    }
+
+    header .image {
         display: none;
+        /* Oculta la imagen en dispositivos más pequeños */
     }
 
     .features {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .pricing {
         grid-template-columns: repeat(1, 1fr);
     }
 

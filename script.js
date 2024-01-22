@@ -1,26 +1,39 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.querySelector('.menu-icon');
+    const mobileNavLinks = document.querySelector('.mobile-nav-links');
+
+    menuIcon.addEventListener('click', function () {
+        mobileNavLinks.classList.toggle('show');
+    });
+
+    // Cierra el menú móvil al hacer clic en un enlace del menú
+    const mobileLinks = document.querySelectorAll('.mobile-nav-links li');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            mobileNavLinks.classList.remove('show');
+        });
+    });
+
+    // Agrega el desplazamiento suave para los enlaces
+    const links = document.querySelectorAll('.nav-links li');
+    links.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            const targetSelector = this.querySelector('a').getAttribute('href');
+            scrollToElement(targetSelector);
+            mobileNavLinks.classList.remove('show'); // Cierra el menú en dispositivos móviles al hacer clic en un enlace
+        });
+    });
+});
+
 function scrollToElement(elementSelector, instance = 0) {
-    // Select all elements that match the given selector
     const elements = document.querySelectorAll(elementSelector);
-    // Check if there are elements matching the selector and if the requested instance exists
     if (elements.length > instance) {
-        // Scroll to the specified instance of the element
         elements[instance].scrollIntoView({ behavior: 'smooth' });
     }
 }
 
-const link1 = document.getElementById("link1");
-const link2 = document.getElementById("link2");
-const link3 = document.getElementById("link3");
-
-link1.addEventListener('click', () => {
-    scrollToElement('.header');
-});
-
-link2.addEventListener('click', () => {
-    // Scroll to the second element with "header" class
-    scrollToElement('.header', 1);
-});
-
-link3.addEventListener('click', () => {
-    scrollToElement('.column');
-});
+function toggleMobileMenu() {
+    const mobileNavLinks = document.querySelector('.mobile-nav-links');
+    mobileNavLinks.classList.toggle('show');
+}
