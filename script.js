@@ -37,3 +37,8 @@ function toggleMobileMenu() {
     const mobileNavLinks = document.querySelector('.mobile-nav-links');
     mobileNavLinks.classList.toggle('show');
 }
+
+function scrollToAppSection() {
+    var appSection = document.getElementById("mobileapp");
+    appSection.scrollIntoView({ behavior: "smooth" });
+}

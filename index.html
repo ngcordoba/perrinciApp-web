@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es_ES">
 
-<head>
+<head id="perrinciweb">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="/script.js"></script>
     <title>Paseos para tus mascotas | Perrinci</title>
 </head>
 
 <body class="home">
 
     <nav>
-        <div class="nav-logo">
+        <div class="nav-logo" href="#home">
             <a href="#">
                 <img src="images/perrinciLogo.png" alt="Perrinci Logo">
             </a>
         </div>
 
         <ul class="nav-links">
-            <li class="link"><a href="#">Inicio</a></li>
-            <li id="link1" class="link"><a href="somos">Quienes somos</a></li>
-            <li id="link2" class="link"><a href="servicios">Servicios</a></li>
+            <li class="link"><a href="#home">Inicio</a></li>
+            <li class="link"><a href="#about">Quienes somos</a></li>
+            <li class="link"><a href="#services">Servicios</a></li>
+            <li class="link"><a href="#mobileapp">Aplicación Móvil</a></li>
         </ul>
+
 
         <div class="mobile-menu">
             <div class="menu-icon" onclick="toggleMobileMenu()">
@@ -31,15 +34,15 @@
                 <span></span>
             </div>
             <ul class="mobile-nav-links" onclick="toggleMobileMenu()">
-                <li class="link"><a href="#">Inicio</a></li>
-                <li id="link1" class="link"><a href="somos">Quienes somos</a></li>
-                <li id="link2" class="link"><a href="servicios">Servicios</a></li>
+                <li class="link"><a href="#home">Inicio</a></li>
+                <li id="link1" class="link"><a href="#about">Quienes somos</a></li>
+                <li id="link2" class="link"><a href="#services">Servicios</a></li>
             </ul>
         </div>
 
     </nav>
 
-    <header class="container">
+    <header class="container" id="home">
         <div class="image">
             <img src="images/header.png" alt="Descripción de la imagen">
         </div>
@@ -49,16 +52,16 @@
 
             <h1>Perrinci</h1>
             <p>¡Conecta con la felicidad de tu mascota en solo unos clics!</p>
-            <button href="aplicacion" class="btn">Descargá la APP</button>
+            <button href="#" class="btn" onclick="scrollToAppSection()">Descargá la APP</button>
         </div>
     </header>
 
 
     <div class="content-after-header">
 
-        <section class="container">
+        <section class="container" id="about">
 
-            <h2 class="header" id="Somos">QUIENES SOMOS</h2>
+            <h2 class="header">QUIENES SOMOS</h2>
             <p> Somos un grupo de estudiantes de informática que como proyecto final hemos desarrollado la aplicación
                 Perrinci.
                 Identificamos que existe un problema para aquellas personas que no cuentan con el tiempo suficiente para
@@ -67,22 +70,24 @@
 
             </p>
 
-            <p> Nuestra misión es ayudar a estas personas, a través de Perrinci para que sus mascotas no se queden sin
+            <p> <span style="color:#0984E3"> Nuestra misión </span> es ayudar a estas personas, a través de Perrinci
+                para que sus mascotas no se queden sin
                 el paseo diario
                 que necesitan. Además, Perrinci invita a más a personas a sumarse, tanto como usuarios o como
                 paseadores, para lograr una
                 unión y una comunidad sana.
             </p>
-            <p> Nuestro obejtivo es ser lideres en este rubro, siguiendo nuestro codigo deontologico y priorizando la
+            <p> <span style="color:#0984E3"> Nuestro obejtivo </span> es ser lideres en este rubro, siguiendo nuestro
+                codigo deontologico y priorizando la
                 seguridad
                 de nuestros usuarios y de sus mascotas.
             </p>
 
         </section>
 
-        <section class="container">
+        <section class="container" id="services">
 
-            <h2 class="header" id="servicios">SERVICIOS</h2>
+            <h2 class="header">SERVICIOS</h2>
             <p> Perrinci es una aplicacion que facilita que paseadores encuentren personas que necesitan pasear a sus
                 mascotas.
                 El usuario conecta con un paseador, que paseará a su mascota teniendo la posibilidad de seguir el
@@ -126,10 +131,10 @@
         </section>
 
 
-        <section class="container">
-            <h2 id="aplicacion" class="header">NUESTRA APP</h2>
+        <section class="container" id="mobileapp">
+            <h2 class="header">NUESTRA APP</h2>
             <p class="sub-header">
-                ¡Descargá nuestra app y formá parte de la comunidad Perrinci!
+                ¡Conocé todas las funcionalidades de Perrinci en nuestra aplicación móvil!
             </p>
 
             <div class="app-container">
@@ -139,7 +144,7 @@
 
                 <div class="app-details">
                     <p style="margin-bottom: 15px;">
-                        Descarga nuestra app y comenza a disfrutar del mundo de Perrinci
+                        ¡Descarga nuestra app y comenza a disfrutar del mundo de Perrinci!
                     </p>
                     <button class="btn">Descargar</button>
                 </div>
@@ -177,7 +182,7 @@
     </div>
 
 
-    <script src="/script.js"></script>
+
 </body>
 
 </html>
