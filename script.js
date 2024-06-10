@@ -34,7 +34,7 @@ function scrollToElement(elementSelector, instance = 0) {
 }
 
 function toggleMobileMenu() {
-    const mobileNavLinks = document.querySelector('.mobile-nav-links');
+    const mobileNavLinks = document.querySelector('mobile-nav-links');
     mobileNavLinks.classList.toggle('show');
 }
 

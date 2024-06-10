@@ -393,7 +393,6 @@ footer .column>a:hover {
         list-style: none;
         display: none;
         flex-direction: column;
-        /* Añade esta línea para mostrar los enlaces en columna */
         position: absolute;
         top: 70px;
         right: 0;
@@ -405,10 +404,9 @@ footer .column>a:hover {
     .mobile-nav-links li {
         margin: 10px 0;
     }
-
 }
 
-@media (width < 900px) {
+@media (width < 899px) {
     .nav-links {
         display: none;
     }
