@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
     <title>Paseos para tus mascotas | Perrinci</title>
 </head>
 
@@ -28,12 +28,12 @@
 
 
         <div class="mobile-menu">
-            <div class="menu-icon" onclick="toggleMobileMenu()">
+            <div class="menu-icon">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <ul class="mobile-nav-links" onclick="toggleMobileMenu()">
+            <ul class="mobile-nav-links">
                 <li class="link"><a href="#home">Inicio</a></li>
                 <li id="link1" class="link"><a href="#about">Quienes somos</a></li>
                 <li id="link2" class="link"><a href="#services">Servicios</a></li>
@@ -52,7 +52,7 @@
 
             <h1>Perrinci</h1>
             <p>¡Conecta con la felicidad de tu mascota en solo unos clics!</p>
-            <button href="#" class="btn" onclick="scrollToAppSection()">Descargá la APP</button>
+            <button href="#" class="btn" onclick="scrollToAppSection(event)">Descargá la APP</button>
         </div>
     </header>
 
@@ -161,17 +161,19 @@
                 <p>
                     Tu perro, nuestro compromiso. Paseos simples, momentos inolvidables.
                 </p>
+                <!-- 
                 <div class="socials">
                     <a href="#"><i class="ri-youtube-line"></i></a>
                     <a href="#"><i class="ri-instagram-line"></i></a>
                     <a href="#"><i class="ri-twitter-line"></i></a>
                 </div>
+                -->
             </div>
 
             <div class="column contact-column">
                 <h4>Contacto</h4>
                 <a href="#">soporte@perrinci.com</a>
-                <a href="#">Codigo Deontológico</a>
+                <a href="https://drive.google.com/file/d/1mnQ9DIuXI0CtT8tnXYhfsxf6rEN6db3D/view?usp=drive_link" target="_blank">Código Deontológico</a>
             </div>
 
         </footer>

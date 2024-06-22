@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
         mobileNavLinks.classList.toggle('show');
     });
 
-    // Cierra el menú móvil al hacer clic en un enlace del menú
     const mobileLinks = document.querySelectorAll('.mobile-nav-links li');
     mobileLinks.forEach(link => {
         link.addEventListener('click', function () {
@@ -14,14 +13,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Agrega el desplazamiento suave para los enlaces
     const links = document.querySelectorAll('.nav-links li');
     links.forEach(link => {
         link.addEventListener('click', function (event) {
             event.preventDefault();
             const targetSelector = this.querySelector('a').getAttribute('href');
             scrollToElement(targetSelector);
-            mobileNavLinks.classList.remove('show'); // Cierra el menú en dispositivos móviles al hacer clic en un enlace
+            mobileNavLinks.classList.remove('show'); 
         });
     });
 });
@@ -33,12 +31,12 @@ function scrollToElement(elementSelector, instance = 0) {
     }
 }
 
-function toggleMobileMenu() {
-    const mobileNavLinks = document.querySelector('mobile-nav-links');
-    mobileNavLinks.classList.toggle('show');
+function scrollToAppSection(event) {
+    event.preventDefault(); 
+    const appSection = document.getElementById('mobileapp');
+    const yOffset = -60; 
+    const y = appSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: 'smooth' }); 
 }
 
-function scrollToAppSection() {
-    var appSection = document.getElementById("mobileapp");
-    appSection.scrollIntoView({ behavior: "smooth" });
-}

@@ -374,6 +374,10 @@ footer .column>a:hover {
     text-align: center;
 }
 
+.mobile-nav-links.show {
+    display: block;
+}
+
 @media (max-width: 899px) {
     .contact-column {
         display: none;
