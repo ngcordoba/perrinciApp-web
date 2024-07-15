@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
+    <link rel="icon" href="images/perrinciFavicon.png" type="image/png">
     <title>Paseos para tus mascotas | Perrinci</title>
 </head>
 
@@ -23,7 +24,7 @@
             <li class="link"><a href="#home">Inicio</a></li>
             <li class="link"><a href="#about">Quienes somos</a></li>
             <li class="link"><a href="#services">Servicios</a></li>
-            <li class="link"><a href="#mobileapp">Aplicación Móvil</a></li>
+            <li id="link3" class="link"><a href="#mobileapp">Descargá la APP</a></li>
         </ul>
 
 
@@ -37,6 +38,7 @@
                 <li class="link"><a href="#home">Inicio</a></li>
                 <li id="link1" class="link"><a href="#about">Quienes somos</a></li>
                 <li id="link2" class="link"><a href="#services">Servicios</a></li>
+                <li id="link3" class="link"><a href="#mobileapp">Descargá la APP</a></li>
             </ul>
         </div>
 
@@ -52,24 +54,19 @@
 
             <h1>Perrinci</h1>
             <p>¡Conectá con la felicidad de tu mascota en solo unos clics!</p>
-            <button href="#" class="btn" onclick="scrollToAppSection(event)">Descargá la APP</button>
+            <button class="btn" onclick="window.location.href='registerType.html'">¡Registrate gratis!</button>
         </div>
     </header>
 
-
     <div class="content-after-header">
-
         <section class="container" id="about">
-
             <h2 class="header">QUIENES SOMOS</h2>
             <p> Somos un grupo de estudiantes de informática que como proyecto final hemos desarrollado la aplicación
                 Perrinci.
                 Identificamos que existe un problema para aquellas personas que no cuentan con el tiempo suficiente para
                 pasear a sus
                 mascotas y tienen inseguridad al momento de contratar un paseador.
-
             </p>
-
             <p> <span style="color:#0984E3"> Nuestra misión </span> es ayudar a estas personas, a través de Perrinci
                 para que sus mascotas no se queden sin
                 el paseo diario
@@ -77,24 +74,21 @@
                 paseadores, para lograr una
                 unión y una comunidad sana.
             </p>
-            <p> <span style="color:#0984E3"> Nuestro obejtivo </span> es ser lideres en este rubro, siguiendo nuestro
-                codigo deontologico y priorizando la
+            <p> <span style="color:#0984E3"> Nuestro objetivo </span> es ser líderes en este rubro, siguiendo nuestro
+                código deontológico y priorizando la
                 seguridad
                 de nuestros usuarios y de sus mascotas.
             </p>
-
         </section>
 
         <section class="container" id="services">
-
             <h2 class="header">SERVICIOS</h2>
-            <p> Perrinci es una aplicacion que facilita que paseadores encuentren personas que necesitan pasear a sus
+            <p> Perrinci es una aplicación que facilita que paseadores encuentren personas que necesitan pasear a sus
                 mascotas.
                 El usuario conecta con un paseador, que paseará a su mascota teniendo la posibilidad de seguir el
                 recorrido
                 en todo momento.
             </p>
-
 
             <div class="features">
                 <div class="card">
@@ -103,7 +97,6 @@
                     <p>
                         Todos los usuarios y tu mascota contarán con un perfil personal para conocerse mejor.
                     </p>
-
                 </div>
                 <div class="card">
                     <span><i class="ri-map-pin-line"></i></span>
@@ -127,9 +120,7 @@
                     </p>
                 </div>
             </div>
-
         </section>
-
 
         <section class="container" id="mobileapp">
             <h2 class="header">NUESTRA APP</h2>
@@ -175,14 +166,13 @@
                 <a href="#">soporte@perrinci.com</a>
                 <a href="https://drive.google.com/file/d/1mnQ9DIuXI0CtT8tnXYhfsxf6rEN6db3D/view?usp=drive_link" target="_blank">Código Deontológico</a>
             </div>
-
+            
         </footer>
     </div>
+
     <div class="copyright">
         Copyright © 2024 - Desarrollado por <span style="color:#0984E3 "> Perrinci<span>
     </div>
-
-
 
 </body>
 

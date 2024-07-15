@@ -40,3 +40,36 @@ function scrollToAppSection(event) {
     window.scrollTo({ top: y, behavior: 'smooth' }); 
 }
 
+/// SINGIN
+document.getElementById('registerForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    const formData = new FormData(this); 
+
+    const userType = sessionStorage.getItem('userType');
+    if (userType) {
+        formData.append('type', userType);
+    }
+
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
+
+    console.log('Datos del formulario:', data);
+    fetch('URL_DEL_BACKEND', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data) 
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        window.location.href = 'registerSuccessfully.html';
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+});
+
