@@ -40,23 +40,85 @@ function scrollToAppSection(event) {
     window.scrollTo({ top: y, behavior: 'smooth' }); 
 }
 
+
+function formatDateToYYYYMMDD(date) {
+    const d = new Date(date);
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}/${month}/${day}`;
+}
+
 /// SINGIN
 document.getElementById('registerForm').addEventListener('submit', function(event) {
     event.preventDefault(); 
     const formData = new FormData(this); 
 
-    const userType = sessionStorage.getItem('userType');
-    if (userType) {
-        formData.append('type', userType);
+    const userType = sessionStorage.getItem('userType'); 
+    let url;
+    let data;
+
+    if (userType === 'DOG_OWNER') {
+        url = 'https://perrincibe.onrender.com/create/dog/owner';
+        data = {
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            phone: formData.get('phone'),
+            dni: formData.get('dni'),
+            userName: formData.get('userName'),
+            userBorn: formatDateToYYYYMMDD(formData.get('born')),
+            email: formData.get('email'),
+            password: formData.get('password'),
+            addresses: [
+                {
+                    street: formData.get('street'),
+                    number: formData.get('number'),
+                    department: formData.get('department'),
+                    city: formData.get('city'),
+                    state: formData.get('state')
+                }
+            ],
+            type: 'DOG_OWNER',
+            dogs: [
+                {
+                    name: formData.get('dogName'),
+                    born: formatDateToYYYYMMDD(formData.get('dogBorn')),
+                    breed: formData.get('breed'),
+                    weight: formData.get('weight')
+                }
+            ]
+        };
+    } else if (userType === 'WALKER') {
+        url = 'https://perrincibe.onrender.com/create/walker';
+        data = {
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            phone: formData.get('phone'),
+            dni: formData.get('dni'),
+            userName: formData.get('userName'),
+            userBorn: formatDateToYYYYMMDD(formData.get('born')),
+            email: formData.get('email'),
+            password: formData.get('password'),
+            addresses: [
+                {
+                    street: formData.get('street'),
+                    number: formData.get('number'),
+                    department: formData.get('department'),
+                    city: formData.get('city'),
+                    state: formData.get('state')
+                }
+            ],
+            type: 'WALKER',
+            cbu: formData.get('cbu'),
+            alias: formData.get('alias')
+        };
+    } else {
+        console.error('Invalid user type');
+        return;
     }
 
-    const data = {};
-    formData.forEach((value, key) => {
-        data[key] = value;
-    });
-
     console.log('Datos del formulario:', data);
-    fetch('URL_DEL_BACKEND', {
+    fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -70,6 +132,6 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     })
     .catch((error) => {
         console.error('Error:', error);
+        window.location.href = 'registerError.html';
     });
 });
-
